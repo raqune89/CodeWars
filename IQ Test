@@ -1,0 +1,22 @@
+def iq_test(numbers):
+    num = numbers.split()
+    odd_num = 0
+    even_num = 0
+    position = 0
+
+    #populate the odd/even variables
+    for i in range (len(num)):
+        if (int(num[i]) % 2 == 0):
+            even_num += 1
+        else:
+            odd_num += 1
+
+    if (odd_num > even_num):    
+        for i in range (len(num)):
+            if (int(num[i]) % 2 == 0):
+                position = i + 1
+    else:
+        for i in range (len(num)):
+            if (int(num[i]) % 2 != 0):
+                position = i + 1
+    return position

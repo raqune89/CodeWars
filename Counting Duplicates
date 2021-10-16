@@ -1,0 +1,27 @@
+def duplicate_count(text):
+    l_case = text.lower() # make all characters lower case
+
+    count = 0
+    dictionary = {}
+
+      # creates a dictionary of every character in the string
+    for i in range(len(l_case)): 
+        dictionary[l_case[i]] = 0 
+
+
+      # works through the dictionary and compares each letter with the others
+      # if any letters match, add 1 to the dictionary
+    for key in dictionary:
+        for i in range(len(l_case)):
+            if(key == l_case[i]):
+                dictionary[key] = dictionary[key] + 1 
+
+
+      # if the dictionary contains more than 1 entry
+      # add 1 to the count
+    for key in dictionary:
+        if(dictionary[key] > 1):
+            count += 1
+
+    
+    return count
